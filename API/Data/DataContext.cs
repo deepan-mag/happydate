@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
 {
-    public class DataContext : IdentityDbContext<AppUser, AppRole, int, 
-        IdentityUserClaim<int>, AppUserRole, IdentityUserLogin<int>, 
+    public class DataContext : IdentityDbContext<AppUser, AppRole, int,
+        IdentityUserClaim<int>, AppUserRole, IdentityUserLogin<int>,
         IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
         public DataContext(DbContextOptions options) : base(options)
@@ -41,7 +41,7 @@ namespace API.Data
                 .HasOne(s => s.SourceUser)
                 .WithMany(l => l.LikedUsers)
                 .HasForeignKey(s => s.SourceUserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<UserLike>()
                 .HasOne(s => s.TargetUser)
@@ -53,7 +53,7 @@ namespace API.Data
                 .HasOne(u => u.Recipient)
                 .WithMany(m => m.MessagesReceived)
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
             builder.Entity<Message>()
                 .HasOne(u => u.Sender)
                 .WithMany(m => m.MessagesSent)
