@@ -3,9 +3,10 @@
 </div>
 
 <div class="container mt-3" *ngIf="userParams">
-    <form #form="ngForm" class="d-flex mb-3" (ngSubmit)="loadMembers()" autocomplete="off">
-        <div class="d-flex mx-2">
-            <label class="col-form-label">Age from: </label>
+    <form #form="ngForm" class="form-inline" (ngSubmit)="loadMembers()" autocomplete="off">
+        <div class="row align-items-center">
+        <div class="col-auto">
+            <label class="custom-control-label">Age from: </label>
             <input 
                 type="number" 
                 class="form-control ms-1" 
@@ -13,8 +14,8 @@
                 name="minAge" 
                 [(ngModel)]="userParams.minAge">
         </div>
-        <div class="d-flex mx-2">
-            <label class="col-form-label">Age to: </label>
+        <div class="col-auto">
+            <label class="custom-control-label">Age to: </label>
             <input 
                 type="number" 
                 class="form-control ms-1" 
@@ -23,8 +24,8 @@
                 [(ngModel)]="userParams.maxAge">
         </div>
 
-        <div class="d-flex px-2">
-            <label class="col-form-label me-2">Show: </label>
+        <div class="col-auto">
+            <label class="custom-control-label">Show: </label>
             <select name="gender" 
                 style="width: 150px" 
                 class="form-select ms-1" 
@@ -35,11 +36,14 @@
             </select>
         </div>
 
+        <div class="col-auto">
         <button class="btn btn-primary ms-1" type="submit">Apply Filters</button>
+        </div>
+        <div class="col-auto">
         <button (click)="resetFilters()" class="btn btn-info ms-1" type="submit">Reset Filters</button>
+        </div>
     
-        <div class="col">
-            <div class="btn-group float-end">
+        <div class="col-auto">
                 <button 
                     type="button"
                     class="btn btn-primary" 
@@ -47,6 +51,8 @@
                     [(ngModel)]="userParams.orderBy" 
                     btnRadio="lastActive"
                     (click)="loadMembers()">Last Active</button>
+        </div>
+        <div class="col-auto">
                 <button 
                     type="button"
                     class="btn btn-primary" 
@@ -54,9 +60,8 @@
                     [(ngModel)]="userParams.orderBy" 
                     btnRadio="created"
                     (click)="loadMembers()">Newest members</button>
-            </div>
         </div>
-    
+    </div>
     </form>
 </div>
 

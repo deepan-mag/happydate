@@ -1,18 +1,21 @@
-<div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
-        <h1>Find your match</h1>
-        <p class="lead">Come on in to view your matches... all you need to do is sign up!</p>
-        <div class="text-center">
-            <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
-            <button class="btn btn-primary btn-info btn-lg">Learn more</button>
-        </div>
-    </div>
-
-    <div *ngIf="registerMode" class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+<header class="masthead text-center text-white">
+            <div *ngIf="!registerMode" class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="masthead-subheading mb-0">Find your match</h1>
+                    <p>Come on in to view your matches... all you need to do is sign up!</p>
+                    <div class="text-center">
+                        <button (click)="registerToggle()" class="btn btn-secondary btn-lg me-2">Register</button>
+                        <button class="btn btn-primary btn-primary btn-lg">Learn more</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+            <div *ngIf="registerMode" class="masthead-content">
+                <div class="container px-5">
+                    <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
