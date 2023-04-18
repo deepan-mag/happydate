@@ -23,7 +23,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     }),
     NgxGalleryModule,
     NgxSpinnerModule.forRoot({
-      type: 'line-scale-party'
+      type: 'pacman'
     }),
     FileUploadModule,
     BsDatepickerModule.forRoot(),

@@ -17,6 +17,9 @@
     gap: 5px;
     margin: 10px;
 }
+.filter_container_form{
+    flex-flow: row;
+}
 .agefrom_container{
     display: flex;
     justify-content: center;

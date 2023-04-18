@@ -2,8 +2,7 @@
     <div class="header_container">
         Your matches found
     </div>
-    <form class="filter_container" *ngIf="userParams">
-        <form #form="ngForm" class="form-inline" (ngSubmit)="loadMembers()" autocomplete="off"></form>
+        <form #form="ngForm" *ngIf="userParams" class="filter_container" (ngSubmit)="loadMembers()" autocomplete="off">
             <div class="agefrom_container">
             <label class="custom-control-label">Age from: </label>
             <input 
@@ -33,6 +32,7 @@
                     </option>
                 </select>
             </div>
+            
             <button class="btn btn-primary ms-1" type="submit">Apply Filters</button>
             <button (click)="resetFilters()" class="btn btn-info ms-1" type="submit">Reset Filters</button>
             <button 
